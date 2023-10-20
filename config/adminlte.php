@@ -325,7 +325,7 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Progrmamas',
+            'text' => 'Programas',
             'url'  => '/programas/listado',
             'icon' => 'fas fa-fw fa-lock',
         ],

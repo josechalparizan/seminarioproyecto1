@@ -3,6 +3,14 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FacultadesController;
+use App\Http\Controllers\ProgramasController;
+use App\Http\Controllers\DocentesController;
+use App\Http\Controllers\EstudiantesController;
+use App\Http\Controllers\MateriasController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +37,19 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+//Rutas Facultades
+Route::get('facultades/listado', [FacultadesController::class, 'index']
+)->middleware(['auth', 'verified'])->name('listado.facultades');
+
+Route::get('programas/listado', [ProgramasController::class, 'index']
+)->middleware(['auth', 'verified'])->name('listado.programas');
+
+Route::get('docentes/listado', [DocentesController::class, 'index']
+)->middleware(['auth', 'verified'])->name('listado.docentes');
+
+Route::get('estudiantes/listado', [EstudiantesController::class, 'index']
+)->middleware(['auth', 'verified'])->name('listado.estudiantes');
+
+Route::get('materias/listado', [MateriasController::class, 'index']
+)->middleware(['auth', 'verified'])->name('listado.materias');
